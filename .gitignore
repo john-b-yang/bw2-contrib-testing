@@ -1,0 +1,13 @@
+# Ignore All
+*
+
+# Unignore everything with extensions
+!*.*
+
+# Unignore directories
+!*/
+
+.env
+.DS_Store
+*.exe
+.bw2bind.log
