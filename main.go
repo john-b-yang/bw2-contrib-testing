@@ -15,7 +15,7 @@ func main() {
 
 }
 
-func test(clientName string, interfaceName string) bool {
+func test(clientName, baseURI, interfaceName, ponum string) bool {
 	// Part 1: Establish Bosswave Connection
 	fmt.Println("Hello World")
 	bwClient := bw2.ConnectOrExit("")
@@ -23,7 +23,6 @@ func test(clientName string, interfaceName string) bool {
 	bwClient.SetEntityFromEnvironOrExit()
 
 	// Part 2: Create Service & Interface Clients
-	baseURI := "john/test/"
 	serviceClient := bwClient.NewServiceClient(baseURI, clientName)
 
 	// Part 3: Create Payload Packages
