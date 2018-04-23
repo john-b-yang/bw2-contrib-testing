@@ -12,7 +12,7 @@ Parameters:
 */
 
 func main() {
-
+	test("s.pelican", "john/test", "i.xbos.thermostat", "2.1.1.0")
 }
 
 func test(clientName, baseURI, interfaceName, ponum string) bool {
