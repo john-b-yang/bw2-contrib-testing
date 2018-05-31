@@ -5,6 +5,7 @@ import (
 	bw2 "gopkg.in/immesys/bw2bind.v5"
 )
 
+// Sample Set Request Struct
 type StateMessage struct {
 	HeatingValue float64
 	CoolingValue float64
@@ -13,6 +14,7 @@ type StateMessage struct {
 	Fan          bool
 }
 
+// Sample Get Request Struct
 type PelicanState struct {
 	Temperature     float64
 	RelHumidity     float64
@@ -29,7 +31,7 @@ type PelicanState struct {
   To be defined by the user. The only things a user would need to modify
   is the struct type of the "getStatus" variable
 */
-func sampleAsseration(input bw2bind.PayloadObject) bool {
+func sampleAssertion(input bw2bind.PayloadObject) bool {
 	var getStatus PelicanState
 	valueIntoErr := input.(bw2.MsgPackPayloadObject).ValueInto(&getStatus)
 	if valueIntoErr != nil {
@@ -55,5 +57,5 @@ func main() {
 		Ponum:         "2.1.1.0",
 	}
 
-	TestDriver(sampleTestStruct, sampleStruct, sampleAsseration)
+	TestDriver(sampleTestStruct, sampleStruct, sampleAssertion)
 }
